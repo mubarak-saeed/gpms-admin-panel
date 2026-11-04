@@ -72,14 +72,6 @@
 
 ---
 
-## ⚙️ دليل التثبيت والتشغيل (Setup & Installation)
-
-#### المتطلبات الأساسية
-* PHP >= 8.2+
-* Composer
-* MySQL >= 8.0+
-* Node.js & NPM
-
 ## 📐 مخطط النظام (System Architecture)
 
 ### 1. مخطط التدفق ودورة حياة المشروع
