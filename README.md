@@ -1,5 +1,4 @@
 # 🎓 نظام إدارة مشاريع التخرج (GPMS)
-## Graduation Project Management System
 
 [![Laravel](https://img.shields.io/badge/Laravel-12.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
 [![Filament](https://img.shields.io/badge/Filament-v5-F59E0B?style=for-the-badge&logo=laravel&logoColor=white)](https://filamentphp.com)
@@ -7,119 +6,140 @@
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4.0-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-نظام متكامل لأتمتة وتنظيم عملية إدارة مشاريع التخرج في الكليات والجامعات، يربط الطلاب والمشرفين الأكاديميين وإدارة الكلية في منصة واحدة لتسهيل متابعة وتوثيق المشاريع.
+منصة متكاملة لأتمتة وتنظيم مشاريع التخرج في الكليات والجامعات. يجمع **GPMS** الطلاب
+والمشرفين الأكاديميين وإدارة الكلية في منظومة واحدة لتقديم المشاريع، متابعة التقدم،
+إدارة المهام والملفات، وتوثيق الاجتماعات والمحادثات.
 
 ---
 
-## 🔍 نظرة عامة على النظام
-يتكون نظام **GPMS** من ثلاثة أجزاء رئيسية متكاملة:
-* **لوحة تحكم إدارية (Web Admin Panel):** مبنية باستخدام Laravel 12 و Filament v5 مخصصة لإدارة الكليات، الأقسام، السنوات الدراسية، توزيع المشرفين واعتماد المشاريع.
-* **تطبيق موبايل (Mobile Application):** مبني باستخدام Flutter للطلاب والمشرفين لمتابعة المهام، جدولة الاجتماعات، رفع الملفات، والمحادثات اللحظية.
-* **واجهة برمجية (REST API):** مبنية باستخدام Laravel Sanctum لتأمين وتسهيل نقل البيانات بين التطبيق والخادم الخلفي.
+## 🔍 نظرة عامة
+
+يتكون النظام من ثلاثة أجزاء مترابطة:
+
+| الجزء | المسؤولية |
+| --- | --- |
+| **لوحة الإدارة** | إدارة الكليات والأقسام والسنوات والمشاريع والمشرفين والصلاحيات والتقارير. |
+| **تطبيق الجوال** | تمكين الطلاب والمشرفين من متابعة المهام والاجتماعات والملفات والمحادثات. |
+| **واجهة REST API** | نقل البيانات بأمان بين التطبيق والخادم باستخدام Laravel Sanctum. |
 
 ---
 
 ## 📌 الفهرس
-1. [الميزات الأساسية لكل دور (Core Features)](#-الميزات-الأساسية-لكل-دور-core-features)
-2. [البنية التقنية (Tech Stack)](#-البنية-التقنية-tech-stack)
-3. [مخطط النظام (System Architecture)](#-مخطط-النظام-system-architecture)
+
+- [الميزات الأساسية لكل دور](#-الميزات-الأساسية-لكل-دور)
+- [البنية التقنية](#-البنية-التقنية)
+- [مخططات النظام](#-مخططات-النظام)
+- [الترخيص](#-الترخيص)
 
 ---
 
-## 🌟 الميزات الأساسية لكل دور (Core Features)
+## 🌟 الميزات الأساسية لكل دور
 
 ### 👤 الطالب (قائد وعضو الفريق)
-* **إدارة الفرق:** إمكانية إنشاء فريق (ليصبح الطالب قائد الفريق) أو إرسال طلب انضمام لفرق قائمة وتلقي الدعوات.
-* **تقديم المشاريع:** تقديم مقترحات المشاريع (العنوان، الوصف، والمجال) وطلب الإشراف من الأكاديميين المتاحين.
-* **إدارة المهام:** متابعة وتعديل حالة المهام الشخصية المسندة إليه من قائد الفريق أو المشرف (Pending -> Completed).
-* **رفع التقارير:** رفع ملفات المشروع (PDF, ZIP) وحفظ الإصدارات وتحديد الملف النهائي.
-* **التواصل اللحظي:** الدردشة المباشرة داخل مجموعة المشروع مع إرسال المرفقات واستلام إشعارات بالاجتماعات والمهام الجديدة.
-* **مكتبة المشاريع:** البحث وتصفح أرشيف مشاريع التخرج السابقة للاستفادة منها.
+
+- **إدارة الفرق:** إنشاء فريق أو طلب الانضمام إلى فريق قائم واستقبال الدعوات.
+- **تقديم المشاريع:** إرسال مقترح المشروع وطلب الإشراف من الأكاديميين المتاحين.
+- **إدارة المهام:** متابعة المهام المسندة وتحديث حالتها حتى الإنجاز.
+- **رفع التقارير:** رفع ملفات المشروع وحفظ إصداراتها وتحديد النسخة النهائية.
+- **التواصل اللحظي:** الدردشة داخل المشروع مع مشاركة المرفقات واستقبال الإشعارات.
+- **مكتبة المشاريع:** البحث في أرشيف مشاريع التخرج السابقة.
 
 ### 👨‍🏫 المشرف الأكاديمي
-* **طلبات الإشراف:** مراجعة طلبات الإشراف الواردة من الفرق وقبولها أو رفضها مع كتابة سبب الرفض.
-* **متابعة المشاريع:** لوحة تحكم لمراقبة أداء الطلاب وحالة تقدم المهام لكل مشروع يشرف عليه.
-* **جدولة الاجتماعات:** إمكانية إنشاء وجدولة اجتماعات مع الطلاب وتحديد وقتها ومكانها (حضوري أو رابط إلكتروني) وتحديث حالتها.
-* **الدردشة والمهام:** التفاعل الفوري في دردشة المشاريع وإسناد وتعديل مهام الطلاب.
+
+- **طلبات الإشراف:** مراجعة الطلبات وقبولها أو رفضها مع توضيح السبب.
+- **متابعة المشاريع:** مراقبة تقدم المشاريع والمهام الخاصة بها.
+- **جدولة الاجتماعات:** إنشاء الاجتماعات وتحديد وقتها ومكانها أو رابطها الإلكتروني.
+- **الدردشة والمهام:** التواصل مع الفرق وإسناد مهام الطلاب وتحديثها.
 
 ### 🛡️ إدارة الجامعة والكليات (الأدمن)
-* **التهيئة الأساسية:** إدارة الكليات، الأقسام، القيود الأكاديمية (الحد الأدنى والأقصى للطلاب في كل فريق).
-* **إدارة السنوات:** تفعيل وإدارة السنوات الدراسية وأرشفة المشاريع السابقة تلقائياً عند انتهاء السنة الحالية.
-* **تقارير وإحصائيات:** لوحة تحكم Filament متقدمة توفر رسوماً بيانية لمعدلات الإنجاز وتوزيع نصاب المشرفين والطلاب.
-* **التحكم بالصلاحيات:** إدارة أدوار المستخدمين وتوزيع الصلاحيات بالاعتماد على حزمة Spatie.
+
+- **التهيئة الأساسية:** إدارة الكليات والأقسام والقيود الأكاديمية للفرق.
+- **إدارة السنوات:** تفعيل السنوات الدراسية وأرشفة المشاريع السابقة عند انتهائها.
+- **التقارير والإحصائيات:** عرض معدلات الإنجاز وتوزيع نصاب المشرفين والطلاب.
+- **التحكم بالصلاحيات:** إدارة الأدوار والصلاحيات باستخدام Spatie وFilament Shield.
 
 ---
 
-## 💻 البنية التقنية (Tech Stack)
+## 💻 البنية التقنية
 
 ### الخلفية ولوحة التحكم (Backend & Admin Panel)
-* **الإطار الأساسي:** [Laravel 12.x](https://laravel.com) (PHP 8.2+)
-* **لوحة التحكم:** [Filament v5](https://filamentphp.com) (مبنية على Livewire v4)
-* **المصادقة والتأمين:** [Laravel Sanctum](https://laravel.com/docs/12.x/sanctum) لتأمين واجهات الـ API.
-* **الصلاحيات والأدوار:** [Spatie Laravel Permission](https://spatie.be/docs/laravel-permission) مع حماية مخصصة للوحة التحكم عبر [Filament Shield](https://github.com/bezhanSalleh/filament-shield).
-* **البث اللحظي (Realtime):** [Laravel Reverb](https://laravel.com/docs/12.x/reverb) / Pusher Channels لإدارة المحادثات اللحظية والإشعارات الفورية.
+
+- **الإطار الأساسي:** [Laravel 12.x](https://laravel.com) مع PHP 8.2 أو أحدث.
+- **لوحة التحكم:** [Filament v5](https://filamentphp.com) المبنية على Livewire v4.
+- **المصادقة:** [Laravel Sanctum](https://laravel.com/docs/12.x/sanctum) لتأمين واجهات API.
+- **الصلاحيات:** [Spatie Laravel Permission](https://spatie.be/docs/laravel-permission) و[Filament Shield](https://github.com/bezhanSalleh/filament-shield).
+- **البث اللحظي:** [Laravel Reverb](https://laravel.com/docs/12.x/reverb) أو Pusher Channels.
 
 ### تطبيق الجوال (Mobile Frontend)
-* **إطار العمل:** [Flutter](https://flutter.dev) (متوافق مع SDK ^3.38)
-* **إدارة الحالة:** [Riverpod](https://riverpod.dev)
-* **الاتصال بالشبكة:** [Dio](https://pub.dev/packages/dio) مع interceptors للتعامل مع الـ Token.
-* **التخزين المحلي:** [Hive](https://pub.dev/packages/hive) لتخزين البيانات محلياً والدردشة غير المتصلة و [Flutter Secure Storage](https://pub.dev/packages/flutter_secure_storage) لحفظ الجلسات وتوكن المصادقة.
-* **المصادقة الحيوية:** البصمة والتعرف على الوجه لتسجيل دخول سريع وآمن.
+
+- **إطار العمل:** [Flutter](https://flutter.dev) المتوافق مع SDK `^3.38`.
+- **إدارة الحالة:** [Riverpod](https://riverpod.dev).
+- **الاتصال بالشبكة:** [Dio](https://pub.dev/packages/dio) مع interceptors للتوكن.
+- **التخزين المحلي:** [Hive](https://pub.dev/packages/hive) و[Flutter Secure Storage](https://pub.dev/packages/flutter_secure_storage).
+- **المصادقة الحيوية:** دعم البصمة والتعرف على الوجه لتسجيل دخول سريع وآمن.
 
 ### قاعدة البيانات والتخزين (Database & Storage)
-* **قاعدة البيانات:** MySQL 8.0+ مع دعم العلاقات والتراجع اللين (Soft Deletes).
-* **التخزين:** دعم رفع الملفات (PDF, ZIP, DOCX) مع تتبع الإصدارات وتحديد صلاحيات الرؤية.
+
+- **قاعدة البيانات:** MySQL 8.0 أو أحدث مع العلاقات وSoft Deletes.
+- **التخزين:** ملفات PDF وZIP وDOCX مع تتبع الإصدارات وصلاحيات الوصول.
 
 ---
 
-## 📐 مخطط النظام (System Architecture)
+## 📐 مخططات النظام
 
-### 1. مخطط التدفق ودورة حياة المشروع
+> المخططات التالية مكتوبة بصيغة Mermaid وتظهر مباشرة في GitHub ويدعمها الوضعان الفاتح والداكن.
+
+### 1. دورة حياة المشروع
+
 ```mermaid
 flowchart TD
-    A[تسجيل حساب طالب] --> B[تكوين فريق أو الانضمام لفريق]
-    B --> C[تقديم مقترح مشروع التخرج]
-    C --> D[إرسال طلب إشراف لمشرف أكاديمي]
-    D --> E{هل تمت الموافقة؟}
-    E -- لا --> F[تعديل المقترح أو اختيار مشرف آخر]
-    E -- نعم --> G[تفعيل المشروع وبدء العمل]
-    G --> H[توزيع المهام وجدولة الاجتماعات والدردشة]
-    H --> I[رفع التقارير والملفات الدورية]
-    I --> J[الاعتماد النهائي للمشروع من الإدارة]
-    J --> K[أرشفة المشروع وإتاحته في مكتبة الكلية]
+    A["تسجيل حساب الطالب"] --> B["تكوين فريق أو الانضمام إلى فريق"]
+    B --> C["تقديم مقترح مشروع التخرج"]
+    C --> D["إرسال طلب إشراف"]
+    D --> E{"هل تمت الموافقة؟"}
+    E -- "لا" --> F["تعديل المقترح أو اختيار مشرف آخر"]
+    E -- "نعم" --> G["تفعيل المشروع وبدء العمل"]
+    G --> H["توزيع المهام وجدولة الاجتماعات"]
+    H --> I["رفع التقارير والملفات الدورية"]
+    I --> J["الاعتماد النهائي من الإدارة"]
+    J --> K["أرشفة المشروع وإتاحته في المكتبة"]
 ```
 
-### 2. العلاقات الكيانية (Entity Relationship Diagram - ERD)
-يقدم النظام بنية بيانات مترابطة ومنظمة لربط كافة العمليات الأكاديمية:
+### 2. العلاقات الكيانية (ERD)
+
+يوضح المخطط العلاقات الرئيسية بين المستخدمين والفرق والمشاريع والمهام والملفات:
+
 ```mermaid
 erDiagram
-    ACADEMIC_YEARS ||--o{ STUDENTS : has
-    ACADEMIC_YEARS ||--o{ TEAMS : has
-    ACADEMIC_YEARS ||--o{ PROJECTS : has
-    COLLEGES ||--o{ DEPARTMENTS : contains
-    COLLEGES ||--o{ SUPERVISORS : employs
-    DEPARTMENTS ||--o{ STUDENTS : contains
-    DEPARTMENTS ||--o{ TEAMS : contains
-    DEPARTMENTS ||--o{ PROJECTS : contains
-    USERS ||--o| STUDENTS : profile
-    USERS ||--o| SUPERVISORS : profile
-    USERS ||--o{ TASKS : creates
-    USERS ||--o{ PROJECT_FILES : uploads
-    TEAMS ||--o{ TEAM_MEMBERS : includes
-    TEAMS ||--o{ TEAM_REQUESTS : receives
-    TEAMS ||--o| PROJECTS : owns
-    PROJECTS ||--o{ PROJECT_SUPERVISOR : assigned
-    PROJECTS ||--o{ SUPERVISION_REQUESTS : requests
-    PROJECTS ||--o{ TASKS : contains
-    PROJECTS ||--o{ MEETINGS : schedules
-    PROJECTS ||--o| PROJECT_CHATS : chat
-    PROJECTS ||--o{ PROJECT_FILES : stores
-    TASKS ||--o{ TASK_ASSIGNEES : assigns
-    PROJECT_CHATS ||--o{ CHAT_MESSAGES : contains
-    CHAT_MESSAGES ||--o{ CHAT_MESSAGE_ATTACHMENTS : attaches
-    PROJECT_CHATS ||--o{ CHAT_USER_READ_STATES : tracks
+    ACADEMIC_YEAR ||--o{ STUDENT : includes
+    ACADEMIC_YEAR ||--o{ TEAM : includes
+    ACADEMIC_YEAR ||--o{ PROJECT : includes
+    COLLEGE ||--o{ DEPARTMENT : contains
+    COLLEGE ||--o{ SUPERVISOR : employs
+    DEPARTMENT ||--o{ STUDENT : contains
+    DEPARTMENT ||--o{ TEAM : contains
+    DEPARTMENT ||--o{ PROJECT : contains
+    USER ||--o| STUDENT : profile
+    USER ||--o| SUPERVISOR : profile
+    USER ||--o{ TASK : creates
+    USER ||--o{ PROJECT_FILE : uploads
+    TEAM ||--o{ TEAM_MEMBER : includes
+    TEAM ||--o{ TEAM_REQUEST : receives
+    TEAM ||--o| PROJECT : owns
+    PROJECT ||--o{ PROJECT_SUPERVISOR : assigns
+    PROJECT ||--o{ SUPERVISION_REQUEST : receives
+    PROJECT ||--o{ TASK : contains
+    PROJECT ||--o{ MEETING : schedules
+    PROJECT ||--o| PROJECT_CHAT : has
+    PROJECT ||--o{ PROJECT_FILE : stores
+    TASK ||--o{ TASK_ASSIGNEE : assigned_to
+    PROJECT_CHAT ||--o{ CHAT_MESSAGE : contains
+    CHAT_MESSAGE ||--o{ CHAT_ATTACHMENT : includes
+    PROJECT_CHAT ||--o{ CHAT_READ_STATE : tracks
 ```
 
 ---
+
 ## 📄 الترخيص
-هذا المشروع مرخص بموجب رخصة [MIT](LICENSE). جميع الحقوق محفوظة لفريق التطوير(Mubarak Saeed).
+
+هذا المشروع مرخص بموجب [MIT](LICENSE). جميع الحقوق محفوظة لفريق التطوير (Mubarak Saeed).
